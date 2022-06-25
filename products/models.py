@@ -17,13 +17,8 @@ class Product(models.Model):
     count = models.IntegerField(blank=False, null=False)
     images = models.ForeignKey(to=ProductPhoto, on_delete=models.CASCADE, null=True)
 
-
     class Meta:
         verbose_name = 'Товар'
-        verbose_name_plural = 'Товары1'
-
-class Category(models.model):
-    title = models.CharField(max_length=40, null=False, blank=False)
-
+        verbose_name_plural = 'Товары'
 
 
