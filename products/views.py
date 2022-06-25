@@ -7,5 +7,3 @@ def home_page(request):
     return render(request, 'products/home_page.html', locals())
 
 
-def product_detail(request, id):
-    pass
