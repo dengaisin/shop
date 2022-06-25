@@ -7,6 +7,11 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('customers/', include('customers.urls')),
     path('products/', include('products.urls')),
+
     path('', RedirectView.as_view(url=reverse_lazy('home-page'), permanent=False)),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
