@@ -1,6 +1,14 @@
 from django.db import models
 
 
+class Category(models.Model):
+    title = models.CharField(max_length=40, null=False, blank=False)
+
+    class Meta:
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'
+
+
 class ProductPhoto(models.Model):
     image = models.ImageField(upload_to='img')
 
@@ -16,9 +24,9 @@ class Product(models.Model):
     is_active = models.BooleanField(default=True)
     count = models.IntegerField(blank=False, null=False)
     images = models.ForeignKey(to=ProductPhoto, on_delete=models.CASCADE, null=True)
+    category = models.ForeignKey(to=Category, on_delete=models.CASCADE, null=False)
 
     class Meta:
         verbose_name = 'Товар'
         verbose_name_plural = 'Товары'
-
-
+    """test"""
