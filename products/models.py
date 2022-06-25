@@ -20,7 +20,7 @@ class Product(models.Model):
 
     class Meta:
         verbose_name = 'Товар'
-        verbose_name_plural = 'Товары'
+        verbose_name_plural = 'Товары1'
 
 class Category(models.model):
     title = models.CharField(max_length=40, null=False, blank=False)
