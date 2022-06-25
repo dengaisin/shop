@@ -22,7 +22,7 @@ INSTALLED_APPS = [
     
     'orders',
     'products',
-    'cart'
+    'cart',
 ]
 
 MIDDLEWARE = [
@@ -107,3 +107,6 @@ MEDIA_URL = '/media/'
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CART_SESSION_ID = 'cart'
+#Это ключ, который мы собираемся использовать для хранения корзины в сессии пользователя.
