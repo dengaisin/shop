@@ -5,26 +5,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <link type="text/css" href="{% static 'css/products/home_page.css' %}">
 </head>
 <body>
-{% block head %}
-        <link type="text/css" href="{% static 'css/products/home_page.css' %}">
-{% endblock %}
-{% block content %}
-    {% if prod_photos %}
 
+{% block content %}
+    <div class="container">
+
+    {% if prod_photos %}
         {% for product in prod_photos %}
-            <div class="product-card">
-                <img src="{{ product.image.url }}"><br>
-                {{ product.product.category }} <br>
-                {{ product.product.title }} <br>
-                {{ product.product.description }} <br>
-                {{ product.product.price }} <br>
-                <hr>
+            <div class="row">
+                <div class="col-lg-5">
+                    <img style="object-fit: cover; width: 100%; height: 100%" src="{{ product.image.url }}"><br>
+                </div>
+
+                <div class="col-lg-7">
+                    Категория: {{ product.product.category }} <br>
+                    Товар: {{ product.product.title }} <br>
+                    Описание: {{ product.product.description }} <br>
+                    Цена: {{ product.product.price }} <br>
+                </div>
             </div>
+            <hr>
 
         {% endfor %}
     {% endif %}
+    </div>
+
 {% endblock%}
 
 </body>
