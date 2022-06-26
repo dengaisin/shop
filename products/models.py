@@ -30,6 +30,8 @@ class Product(models.Model):
 class ProductPhoto(models.Model):
     product = models.ForeignKey(to=Product, on_delete=models.CASCADE, default=None)
     image = models.ImageField(upload_to='product_images')
+    is_active = models.BooleanField(default=True)
+    is_main = models.BooleanField(default=False)
 
     def __str__(self):
         return self.product.title

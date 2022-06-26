@@ -7,10 +7,26 @@
     <title>Home</title>
 </head>
 <body>
-
+{% block head %}
+        <link type="text/css" href="{% static 'css/products/home_page.css' %}">
+{% endblock %}
 {% block content %}
-<h3>Магазин пока не работает, и не будет...</h3>
+    {% if prod_photos %}
+
+        {% for product in prod_photos %}
+            <div class="product-card">
+                <img src="{{ product.image.url }}"><br>
+                {{ product.product.category }} <br>
+                {{ product.product.title }} <br>
+                {{ product.product.description }} <br>
+                {{ product.product.price }} <br>
+                <hr>
+            </div>
+
+        {% endfor %}
+    {% endif %}
 {% endblock%}
 
 </body>
+
 </html>
