@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="row">
+        <div class="col-lg-6">
+            {{ prod_photo.image.url }}
+        </div>
+
+        <div class="col-lg-6">
+            Категория: {{ product.product.category }} <br>
+            Товар: {{ product.product.title }} <br>
+            Описание: {{ product.product.description }} <br>
+            Цена: {{ product.product.price }} <br>
+        </div>
+    </div>
+{% endblock %}

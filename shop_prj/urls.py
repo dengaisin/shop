@@ -11,7 +11,7 @@ urlpatterns = [
     path('customers/', include('customers.urls')),
     path('products/', include('products.urls')),
     path('', RedirectView.as_view(url=reverse_lazy('home-page'), permanent=False)),
-    path(r'^cart/', include('cart.urls', namespace='cart')),
+    path('cart/', include('cart.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
