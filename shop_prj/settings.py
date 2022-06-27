@@ -86,8 +86,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'shop_prj.wsgi.application'
 
-
-
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 
