@@ -11,8 +11,32 @@ SECRET_KEY = 'django-insecure-_q!7rpwx5^ki@4kb)1!zx@(*44@9gqcl^mb8uu#k8dy0o5xisp
 DEBUG = False
 if DEBUG:
     ALLOWED_HOSTS = ['127.0.0.1']
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'd3aovvkjhehooa',
+            'USER': 'dyqhroqstfctdv',
+            'PASSWORD': '254acce735c650ae4024e78a7cbb84039e4f3605ffdd91cf9bc5014f52fd7ab9',
+            'HOST': 'ec2-34-247-72-29.eu-west-1.compute.amazonaws.com',
+            'PORT': '5432',
+        }
+    }
+
 else:
     ALLOWED_HOSTS = ['some-django-shop.herokuapp.com']
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'd6046mns47o8bk',
+            'USER': 'lmegdvspbnucil',
+            'PASSWORD': '5026d713a206784f3e37c1942cde83337ae2ed7567f459cac8353cdd918cee91',
+            'HOST': 'ec2-3-222-74-92.compute-1.amazonaws.com',
+            'PORT': '5432',
+        }
+    }
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
