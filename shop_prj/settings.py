@@ -9,9 +9,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_q!7rpwx5^ki@4kb)1!zx@(*44@9gqcl^mb8uu#k8dy0o5xisp'
 
 DEBUG = False
-if DEBUG:
-    ALLOWED_HOSTS = ['127.0.0.1']
 
+ALLOWED_HOSTS = ['*']
+
+
+if DEBUG:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -24,8 +26,6 @@ if DEBUG:
     }
 
 else:
-    ALLOWED_HOSTS = ['some-django-shop.herokuapp.com']
-
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
