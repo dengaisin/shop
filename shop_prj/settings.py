@@ -1,7 +1,6 @@
 import os
 from pathlib import Path
 import dj_database_url
-import whitenoise
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -87,16 +86,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'shop_prj.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd3aovvkjhehooa',
-        'USER': 'dyqhroqstfctdv',
-        'PASSWORD': '254acce735c650ae4024e78a7cbb84039e4f3605ffdd91cf9bc5014f52fd7ab9',
-        'HOST': 'ec2-34-247-72-29.eu-west-1.compute.amazonaws.com',
-        'PORT': '5432',
-    }
-}
 
 
 db_from_env = dj_database_url.config()
@@ -135,6 +124,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+if not DEBUG:
+    STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+
 #  ____________________________________________________________________________________MEDIA
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
