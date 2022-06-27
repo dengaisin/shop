@@ -9,10 +9,10 @@ SECRET_KEY = 'django-insecure-_q!7rpwx5^ki@4kb)1!zx@(*44@9gqcl^mb8uu#k8dy0o5xisp
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
-
 
 if DEBUG:
+    ALLOWED_HOSTS = ['127.0.0.1']
+
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -25,6 +25,8 @@ if DEBUG:
     }
 
 else:
+    ALLOWED_HOSTS = ['some-django-shop.herokuapp.com']
+
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
