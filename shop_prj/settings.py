@@ -9,9 +9,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_q!7rpwx5^ki@4kb)1!zx@(*44@9gqcl^mb8uu#k8dy0o5xisp'
 
 DEBUG = False
-
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'some-django-shop.herokuapp.com']
-
+if DEBUG:
+    ALLOWED_HOSTS = ['127.0.0.1']
+else:
+    ALLOWED_HOSTS = ['some-django-shop.herokuapp.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
