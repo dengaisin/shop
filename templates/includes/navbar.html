@@ -8,7 +8,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0">
     <div class="container">
-      <a class="navbar-brand" href="#!"><span style="color: #5e9693;">Магазин</span></a>
+      <a class="navbar-brand" href="{% url 'home-page' %}"><span style="color: #5e9693;">Магазин</span></a>
       <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
         data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
         aria-label="Toggle navigation">
@@ -17,7 +17,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#!">Список товаров</a>
+            <a class="nav-link" href="{% url 'home-page' %}">Список товаров</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#!">О нас</a>
@@ -25,7 +25,7 @@
           <li class="nav-item">
             <a class="nav-link" href="#!">Доставка</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item cart">
             <a class="nav-link" href="#!">Корзина</a>
           </li>
 

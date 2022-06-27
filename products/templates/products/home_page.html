@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/products/home_page.css" %}">
+{% endblock %}
 {% block content %}
     <div class="container">
 
     {% if prod_photos %}
         {% for product in prod_photos %}
-            <div class="row">
+            <a href="{{ product.product.slug }}">
+            <div class="row product-card">
                 <div class="col-lg-5">
                     <img style="object-fit: cover; width: 100%; height: 100%" src="{{ product.image.url }}"><br>
                 </div>
