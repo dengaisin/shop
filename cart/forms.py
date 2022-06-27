@@ -1,5 +1,6 @@
 from django import forms
 
+"""позволяет пользователю выбрать количество между 1-20"""
 PRODUCT_QUANTITY_CHOICES = [(i, str(i)) for i in range(1, 21)]
 
 
