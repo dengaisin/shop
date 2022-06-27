@@ -1,16 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
-
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/products/home_page.css" %}">
+{% endblock %}
 {% block content %}
-<h3>Магазин пока не работает, и не будет...</h3>
-{% endblock%}
+    <div class="container">
 
-</body>
-</html>
+    {% if prod_photos %}
+        {% for product in prod_photos %}
+            <a href="{{ product.product.slug }}">
+            <div class="row product-card">
+                <div class="col-lg-5">
+                    <img style="object-fit: cover; width: 100%; height: 100%" src="{{ product.image.url }}"><br>
+                </div>
+
+                <div class="col-lg-7">
+                    Категория: {{ product.product.category }} <br>
+                    Товар: {{ product.product.title }} <br>
+                    Описание: {{ product.product.description }} <br>
+                    Цена: {{ product.product.price }} <br>
+                </div>
+            </div>
+            <hr>
+
+        {% endfor %}
+    {% endif %}
+    </div>
+
+{% endblock%}

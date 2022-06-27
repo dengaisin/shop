@@ -8,13 +8,11 @@
       <jdbc-url>jdbc:postgresql://localhost:5432/shop</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="Django default" uuid="38dee545-a5af-410f-b607-ce13588da061">
+    <data-source source="LOCAL" name="Heroku postgres shop" uuid="fedc8641-281b-4d8e-98b3-d262002da083">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>$PROJECT_DIR$/shop_prj/settings.py</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/shop</jdbc-url>
+      <jdbc-url>jdbc:postgresql://ec2-34-247-72-29.eu-west-1.compute.amazonaws.com:5432/d3aovvkjhehooa</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
