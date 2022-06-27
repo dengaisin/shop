@@ -10,5 +10,4 @@ def home_page(request):
 def product_detail(request, slug):
     product = Product.objects.get(slug=slug)
     prod_photo = get_object_or_404(ProductPhoto, product=product.id)
-    print(product.title)
     return render(request, 'products/product-detail.html', locals())

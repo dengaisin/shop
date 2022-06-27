@@ -1,15 +1,16 @@
 import os
 from pathlib import Path
-
+import dj_database_url
+import whitenoise
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 SECRET_KEY = 'django-insecure-_q!7rpwx5^ki@4kb)1!zx@(*44@9gqcl^mb8uu#k8dy0o5xisp'
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'some-django-shop.herokuapp.com']
 
 
 INSTALLED_APPS = [
@@ -19,7 +20,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+    'whitenoise.runserver_nostatic',
+
     'orders',
     'products',
     'cart',
@@ -30,6 +32,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -59,8 +62,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'shop_prj.wsgi.application'
 
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -71,6 +72,10 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -98,12 +103,13 @@ USE_I18N = True
 USE_TZ = True
 
 #  ____________________________________________________________________________________STATIC
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-   BASE_DIR / 'static'
-]
-
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 #  ____________________________________________________________________________________MEDIA
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
