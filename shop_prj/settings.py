@@ -4,7 +4,6 @@ import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 SECRET_KEY = 'django-insecure-_q!7rpwx5^ki@4kb)1!zx@(*44@9gqcl^mb8uu#k8dy0o5xisp'
 
 DEBUG = True
@@ -34,7 +33,6 @@ else:
         }
     }
 
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -48,7 +46,6 @@ INSTALLED_APPS = [
     'products',
     'cart',
     'customers'
-
 
 ]
 
@@ -68,7 +65,8 @@ ROOT_URLCONF = 'shop_prj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates/'],
+        'DIRS': [BASE_DIR / 'templates/',
+                 BASE_DIR / 'customers/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -82,12 +80,10 @@ TEMPLATES = [
     },
 ]
 
-
 WSGI_APPLICATION = 'shop_prj.wsgi.application'
 
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -103,7 +99,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 LANGUAGE_CODE = 'en-us'
 
@@ -128,8 +123,10 @@ if not DEBUG:
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CART_SESSION_ID = 'cart'
-#Это ключ, который мы собираемся использовать для хранения корзины в сессии пользователя.
+# Это ключ, который мы собираемся использовать для хранения корзины в сессии пользователя.
+
+LOGIN_REDIRECT_URL = '/'
+# LOGOUT_REDIRECT_URL = '/'
