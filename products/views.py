@@ -15,3 +15,4 @@ def product_detail(request, slug):
     print(product.title)
     return render(request, 'products/product-detail.html', {'product': product,
                                                             'cart_product_form': cart_product_form})
+#
