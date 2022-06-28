@@ -33,4 +33,8 @@ body {
   letter-spacing: 3px;
 }
 
+ul {
+  list-style: none;
+}
+
 
