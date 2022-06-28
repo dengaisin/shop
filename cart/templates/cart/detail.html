@@ -1,4 +1,4 @@
-{% extends "shop/base.html" %}
+{% extends "base.html" %}
 {% load static %}
 {% block title %}
     Your shopping cart
@@ -46,7 +46,7 @@
         </tbody>
     </table>
     <p class="text-right">
-        <a href="{% url "products:product_list" %}" class="button light">Continue shopping</a>
+        <a href="{% url "home-page" %}" class="button light">Continue shopping</a>
         <a href="#" class="button">Checkout</a>
     </p>
 {% endblock %}
