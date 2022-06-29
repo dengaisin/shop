@@ -7,7 +7,7 @@
         </div>
 
         <div class="col-lg-6">
-            <form action="{% url 'cart:cart_add' product.id %}" method="post">
+            <form action="{% url 'cart_add' product.id %}" method="post">
             Категория: {{ product.category }} <br>
             Товар: {{ product.title }} <br>
             Описание: {{ product.description }} <br>
