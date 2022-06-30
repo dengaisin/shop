@@ -4,6 +4,7 @@ from products.models import Product
 from .cart import Cart
 from .forms import CartAddProductForm
 
+
 """
 Это представление для добавления продуктов в
 корзину или обновления количества 
